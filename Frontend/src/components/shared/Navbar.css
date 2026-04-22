@@ -1,0 +1,94 @@
+/* //navbar.css */
+
+
+
+.navbar {
+    width: 220px;
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.brand-icon {
+    font-size: 1.4rem;
+    color: var(--accent);
+    animation: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.brand-text {
+    font-family: "DM Serif Display", serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.navbar-links {
+    list-style: none;
+    padding: 0 0.75rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+    letter-spacing: 0.2px;
+}
+
+.nav-link:hover {
+    background: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+.nav-link.active {
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.nav-icon {
+    font-size: 0.9rem;
+    width: 18px;
+    text-align: center;
+}
+
+:root {
+    --sidebar-bg: #13151f;
+    --hover-bg: #252840;
+    --accent-subtle: rgba(108, 99, 255, 0.12);
+}
