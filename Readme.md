@@ -1,3 +1,137 @@
+# Student Management System - Frontend
+
+## Setup
+
+```bash
+cd frontend
+npm install
+```
+
+`src/hooks/axiosInstance.js` mein apna backend URL set karo:
+```js
+const API = axios.create({
+  baseURL: "http://localhost:5000/api",
+});
+```
+
+```bash
+npm run dev    # development
+npm run build  # production build
+```
+
+---
+
+## Folder Structure
+
+```
+frontend/
+├── src/
+│   ├── api/
+│   │   ├── studentapi.js
+│   │   ├── attendanceapi.js
+│   │   ├── marksapi.js
+│   │   └── dashboardapi.js
+│   ├── components/
+│   │   ├── Dashboard/
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── Dashboard.css
+│   │   ├── Attendance/
+│   │   │   ├── Attendance.jsx
+│   │   │   └── Attendance.css
+│   │   ├── Marks/
+│   │   │   ├── Marks.jsx
+│   │   │   └── Marks.css
+│   │   └── shared/
+│   │       ├── Navbar.jsx
+│   │       ├── Navbar.css
+│   │       ├── UI.jsx
+│   │       ├── Student.jsx
+│   │       └── Students.css
+│   ├── hooks/
+│   │   └── axiosInstance.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## Pages & Routes
+
+| Route        | Component    | Description                        |
+|--------------|--------------|------------------------------------|
+| `/`          | Dashboard    | Stats — students, attendance, marks |
+| `/students`  | Students     | Student list, add/edit/delete       |
+| `/attendance`| Attendance   | Attendance mark karo, filter by date|
+| `/marks`     | Marks        | Marks add karo, filter by student   |
+
+---
+
+## API Calls Reference
+
+### 🎓 Students (`src/api/studentapi.js`)
+
+| Function         | Method | Endpoint                     |
+|------------------|--------|------------------------------|
+| `getAll(search)` | GET    | `/students?search=`          |
+| `add(data)`      | POST   | `/students`                  |
+| `update(id,data)`| PUT    | `/students/:id`              |
+| `delete(id)`     | DELETE | `/students/:id`              |
+
+---
+
+### 📋 Attendance (`src/api/attendanceapi.js`)
+
+| Function              | Method | Endpoint                          |
+|-----------------------|--------|-----------------------------------|
+| `getAll(date,studentId)` | GET | `/attendance?date=&studentId=`   |
+| `mark(data)`          | POST   | `/attendance`                     |
+| `delete(id)`          | DELETE | `/attendance/:id`                 |
+
+---
+
+### 📝 Marks (`src/api/marksapi.js`)
+
+| Function          | Method | Endpoint                  |
+|-------------------|--------|---------------------------|
+| `getAll(studentId)`| GET   | `/marks?studentId=`       |
+| `add(data)`       | POST   | `/marks`                  |
+| `update(id,data)` | PUT    | `/marks/:id`              |
+| `delete(id)`      | DELETE | `/marks/:id`              |
+
+---
+
+### 📊 Dashboard (`src/api/dashboardapi.js`)
+
+| Function  | Method | Endpoint     |
+|-----------|--------|--------------|
+| `getStats`| GET    | `/dashboard` |
+
+---
+
+## Tech Stack
+
+| Package         | Use                        |
+|-----------------|----------------------------|
+| React 18        | UI framework               |
+| Vite            | Build tool                 |
+| React Router v6 | Client-side routing        |
+| Axios           | HTTP requests              |
+| React Hot Toast | Notifications              |
+
+---
+
+## Environment
+
+Backend `http://localhost:5000` pe hona chahiye jab frontend run ho.
+CORS backend mein already enabled hona chahiye.
+
+
+
+
 # Student Management System - Backend
 
 ## Setup
