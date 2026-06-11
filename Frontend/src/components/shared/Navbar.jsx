@@ -9,6 +9,7 @@ const Navbar = () => {
     { to: "/students", label: "Students", icon: "◈" },
     { to: "/attendance", label: "Attendance", icon: "◉" },
     { to: "/marks", label: "Marks", icon: "◆" },
+    { to: "/portal", label: "Student Portal", icon: "🎓" },
   ];
 
   return (

@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Attendance from "./components/Attendance/Attendance";
 import Students from "./components/shared/Student";
 import Marks from "./components/Marks/Marks";
+import Portal from "./components/Portal/Portal";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/students" element={<Students />} />
           <Route path="/marks" element={<Marks />} />
+          <Route path="/portal" element={<Portal />} />
         </Routes>
       </div>
     </div>
