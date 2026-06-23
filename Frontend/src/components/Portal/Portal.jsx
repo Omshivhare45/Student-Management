@@ -1,5 +1,5 @@
 import{ useState }from "react";
-import{ getPortalData }from "../../api/potalapi";
+import{ getPortalData }from "../../api/portalapi";
 import toast from "react-hot-toast";
 import "./Portal.css";
 
@@ -10,10 +10,10 @@ export default function Portal() {
     const handleSearch = async() => {
         if(!roll.trim()) return toast.error("Please enter a roll number");
         try{
-            const res = await getProtalData(roll.trim());
+            const res = await getPortalData(roll.trim());
             setData(res.data.data);
         } catch (error) {
-            toast.error("Error fetching portal data");
+            toast.error("Error fetching portal data", error);
             setData(null);
         }
     
@@ -38,7 +38,7 @@ export default function Portal() {
                 <div className="card">
                     <h3>{data.student.name}</h3>
                     <p>Roll: {data.student.rollNumber}</p>
-                    <p>Attendance: <strong>{data.student.attendance}%</strong></p>
+                    <p>Attendance: <strong>{data.Percentage}%</strong></p>
                 </div>
 
                 <h4>Attendance</h4>

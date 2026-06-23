@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Central axios instance — baseURL .env se aata hai
 const API = axios.create({
-  baseURL:  "http://localhost:5000/api",
+  baseURL:  "http://localhost:3000/api",
   headers: {
     "Content-Type": "application/json",
   },
